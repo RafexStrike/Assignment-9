@@ -11,8 +11,11 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOutUser()
       .then(() => "user has been logged out successfully")
-      .catch((error) => console.log(error));
+      // .catch((error) => console.log(error));
   };
+  const userEmail = user?.email;
+  console.log(user);
+  console.log(user.email);
 
   const links = (
     <>
@@ -68,12 +71,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <button
+            <div className="flex items-center gap-4">
+              <p>{userEmail}</p>
+              <button
               onClick={handleLogOut}
               className="btn btn-success rounded-lg"
             >
               Logout
             </button>
+            </div>
           ) : (
             <Link to={`/login`} className="btn btn-success rounded-lg">Login</Link>
           )}

@@ -5,7 +5,7 @@ import EventCard from "../EventCard/EventCard";
 const UpcomingEvents = () => {
   const eventContextValue = use(EventContext);
   const eventsData = eventContextValue.eventsData;
-  console.log(eventsData);
+  // console.log(eventsData);
   return (
     <div>
       <div className="text-center mb-16">

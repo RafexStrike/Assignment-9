@@ -15,12 +15,12 @@ const Login = () => {
   const handleGoogleLogIn = () => {
     loginUserWithGoogle()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         toast.success("Logged in with Google!");
         navigate(locationLogin?.state || `/`);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error("Google login failed. Try again.");
       });
   };
@@ -38,12 +38,12 @@ const Login = () => {
 
     loginUser(email, password)
       .then((result) => {
-        console.log(result, result.user);
+        // console.log(result, result.user);
         toast.success("Login successful!");
         navigate(locationLogin?.state || `/`);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error("Login failed. Check your credentials.");
       });
   };

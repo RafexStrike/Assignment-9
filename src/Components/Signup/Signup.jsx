@@ -28,7 +28,7 @@ const Signup = () => {
   
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         toast.success("Signup successful!");
         navigate(locationLogin?.state || `/`);
       })
@@ -41,10 +41,10 @@ const Signup = () => {
   const handleGoogleLogIn = () => {
     loginUserWithGoogle()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         navigate(locationLogin?.state || `/`);
       });
   };
