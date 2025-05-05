@@ -1,5 +1,8 @@
 import { createContext } from "react";
 
-const EventContext = createContext(null);
+const EventContext = createContext({
+  eventsData: [],
+  loading: true
+});
 
 export default EventContext;

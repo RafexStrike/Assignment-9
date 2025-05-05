@@ -5,10 +5,16 @@ import {
   FaTag,
   FaMoneyBill,
 } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const EventCard = ({ event }) => {
-  const { thumbnail, name, category, date, location, entryFee, description } =
+  const { thumbnail,id, name, category, date, location, entryFee, description } =
     event;
+
+    const navigate = useNavigate();
+    const handleViewMore = () => {
+        navigate(`/event/${id}`)
+    }
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
@@ -39,7 +45,7 @@ const EventCard = ({ event }) => {
         </div>
 
         <div className="card-actions justify-end mt-4">
-          <button className="btn btn-outline btn-primary btn-sm">
+          <button onClick={handleViewMore} className="btn btn-outline btn-primary btn-sm">
             View More
           </button>
         </div>
