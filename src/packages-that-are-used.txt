@@ -4,6 +4,7 @@ packages used:
 3. daisy ui
 4. react-router
 5. firebase
+6. react-icons
 
 
 
