@@ -2,7 +2,10 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from "../Layouts/HomeLayout";
 import Home from "../Pages/Home";
 import Login from "../Components/Login/Login.jsx";
-import SignUp from "../Components/Signup/Signup.jsx";
+import Signup from "../Components/Signup/Signup.jsx";
+import ErrorPage from "../Pages/ErrorPage";
+import { Toaster } from 'react-hot-toast';
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -18,7 +21,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/signup",
-                element: <SignUp></SignUp>,
+                element: <Signup></Signup>,
+            },
+            {
+                path: "*",
+                element: <ErrorPage></ErrorPage>,
             },
         ],
     },
