@@ -1,0 +1,17 @@
+packages used:
+1. vite
+2. tailwind css
+3. daisy ui
+4. react-router
+5. firebase
+
+
+
+btn-primary     // Main primary button
+btn-secondary   // Secondary action
+btn-accent      // Highlight action
+btn-neutral     // Neutral gray-like button
+btn-info        // Info tone
+btn-success     // Success/confirmation
+btn-warning     // Warning/alert
+btn-error       // Error/danger

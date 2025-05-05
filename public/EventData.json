@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "thumbnail": "https://example.com/images/techfest.jpg",
+      "name": "Dhaka Tech Fest 2025",
+      "category": "Tech",
+      "date": "2025-06-10",
+      "location": "International Convention City Bashundhara (ICCB), Dhaka",
+      "entryFee": "Free",
+      "description": "Explore the latest innovations in AI, robotics, and software development at Bangladesh's biggest tech event."
+    },
+    {
+      "id": 2,
+      "thumbnail": "https://example.com/images/streetfood.jpg",
+      "name": "Old Dhaka Street Food Carnival",
+      "category": "Food",
+      "date": "2025-06-15",
+      "location": "Lalbagh, Old Dhaka",
+      "entryFee": "৳100",
+      "description": "Taste authentic Old Dhaka delicacies with live music and cultural performances at the heart of the city."
+    },
+    {
+      "id": 3,
+      "thumbnail": "https://example.com/images/artworkshop.jpg",
+      "name": "Watercolor Art Workshop",
+      "category": "Art",
+      "date": "2025-06-20",
+      "location": "Alliance Française de Dhaka",
+      "entryFee": "৳300",
+      "description": "A beginner-friendly art session teaching watercolor techniques by renowned local artists."
+    },
+    {
+      "id": 4,
+      "thumbnail": "https://example.com/images/eco-fair.jpg",
+      "name": "Green Living Eco Fair",
+      "category": "Environment",
+      "date": "2025-06-25",
+      "location": "National Museum Lawn, Dhaka",
+      "entryFee": "Free",
+      "description": "An event promoting sustainable living with eco-friendly product booths, workshops, and panel talks."
+    },
+    {
+      "id": 5,
+      "thumbnail": "https://example.com/images/photowalk.jpg",
+      "name": "Heritage Site Photo Walk",
+      "category": "Photography",
+      "date": "2025-07-05",
+      "location": "Panam City, Sonargaon",
+      "entryFee": "৳150",
+      "description": "Join fellow photography lovers in capturing the timeless beauty of Panam City's historical ruins."
+    },
+    {
+      "id": 6,
+      "thumbnail": "https://example.com/images/streetfood-night.jpg",
+      "name": "Night Street Food Fiesta",
+      "category": "Food",
+      "date": "2025-07-10",
+      "location": "Hatirjheel Lakeside",
+      "entryFee": "৳120",
+      "description": "Enjoy late-night street snacks from across Bangladesh with live DJs and a lakeside vibe."
+    }
+  ]
+  
