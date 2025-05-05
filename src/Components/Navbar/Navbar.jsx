@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import AuthContext from "../../Contexts/Auth/AuthContext";
@@ -9,13 +9,12 @@ const Navbar = () => {
   const { user, logOutUser } = userInfo;
 
   const handleLogOut = () => {
-    logOutUser()
-      .then(() => "user has been logged out successfully")
-      // .catch((error) => console.log(error));
+    logOutUser().then(() => "user has been logged out successfully");
+    // .catch((error) => console.log(error));
   };
   const userEmail = user?.email;
   console.log(user);
-  console.log(user.email);
+  console.log(userEmail);
 
   const links = (
     <>
@@ -72,16 +71,20 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <div className="flex items-center gap-4">
-              <p>{userEmail}</p>
+              <Suspense fallback={<p>User information is loading...</p>}>
+                <p>{userEmail}</p>
+              </Suspense>
               <button
-              onClick={handleLogOut}
-              className="btn btn-success rounded-lg"
-            >
-              Logout
-            </button>
+                onClick={handleLogOut}
+                className="btn btn-success rounded-lg"
+              >
+                Logout
+              </button>
             </div>
           ) : (
-            <Link to={`/login`} className="btn btn-success rounded-lg">Login</Link>
+            <Link to={`/login`} className="btn btn-success rounded-lg">
+              Login
+            </Link>
           )}
         </div>
       </div>

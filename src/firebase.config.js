@@ -6,13 +6,16 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDkmKZHUfUkdnWK1EiNqmhvFlyDWOODLI4",
-  authDomain: "eventero-assignment9.firebaseapp.com",
-  projectId: "eventero-assignment9",
-  storageBucket: "eventero-assignment9.firebasestorage.app",
-  messagingSenderId: "335375021092",
-  appId: "1:335375021092:web:a9bc4c04525b19eb21d4b1"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
+
+// Debug: Log the API key to check if environment variables are loaded
+console.log('API Key loaded:', !!import.meta.env.VITE_FIREBASE_API_KEY);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
