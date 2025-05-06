@@ -6,7 +6,11 @@ import { useLocation } from "react-router";
 const ForgetPassword = () => {
   const location = useLocation();
   const passedEmail = location.state?.loginEmail;
-  console.log(passedEmail);
+//   console.log(passedEmail);
+const handleRedirect = () => {
+    window.open("https://mail.google.com", "_blank");
+  };
+  
   const { sendPasswordResetLink } = use(AuthContext);
   const handleResetPassword = (event) => {
     event.preventDefault();
@@ -28,7 +32,7 @@ const ForgetPassword = () => {
               defaultValue={passedEmail ? passedEmail : ""}
             />
 
-            <button className="btn btn-neutral mt-4">Send Reset Link</button>
+            <button onClick={handleRedirect} className="btn btn-neutral mt-4">Send Reset Link</button>
           </form>
         </div>
       </div>
