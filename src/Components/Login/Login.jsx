@@ -5,8 +5,10 @@ import { use } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { toast, Toaster } from "react-hot-toast";
 import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
-
+import { useState } from "react";
 const Login = () => {
+  const [loginEmail, setLoginEmail] = useState("");
+  // console.log(loginEmail);
   const userInfo = use(AuthContext);
   const loginUser = userInfo.loginUser;
   const loginUserWithGoogle = userInfo.loginUserWithGoogle;
@@ -14,7 +16,6 @@ const Login = () => {
   const locationLogin = useLocation();
 
   const handleGoogleLogIn = () => {
-
     loginUserWithGoogle()
       .then((result) => {
         // console.log(result);
@@ -28,14 +29,15 @@ const Login = () => {
   };
 
   const handleRegister = (event) => {
-    
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
-  
+
     if (!passwordRegex.test(password)) {
-      toast.error("Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.");
+      toast.error(
+        "Password must be at least 6 characters long and include at least one uppercase and one lowercase letter."
+      );
       return;
     }
 
@@ -73,6 +75,7 @@ const Login = () => {
                   type="email"
                   className="input mb-3"
                   placeholder="Email"
+                  onChange={(e) => setLoginEmail(e.target.value)}
                 />
                 <label className="label">Password</label>
                 <input
@@ -84,6 +87,7 @@ const Login = () => {
                 <div>
                   <Link
                     to={`/forgetpassword`}
+                    state={{ loginEmail }}
                     className="link link-hover font-extralight"
                   >
                     Forgot Password?

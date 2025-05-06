@@ -1,8 +1,12 @@
 import React from "react";
 import { use } from "react";
 import AuthContext from "../../Contexts/Auth/AuthContext";
+import { useLocation } from "react-router";
 
 const ForgetPassword = () => {
+  const location = useLocation();
+  const passedEmail = location.state?.loginEmail;
+  console.log(passedEmail);
   const { sendPasswordResetLink } = use(AuthContext);
   const handleResetPassword = (event) => {
     event.preventDefault();
@@ -20,7 +24,8 @@ const ForgetPassword = () => {
               name="email"
               type="email"
               className="input"
-              placeholder="Email"
+              placeholder="Give your email"
+              defaultValue={passedEmail ? passedEmail : ""}
             />
 
             <button className="btn btn-neutral mt-4">Send Reset Link</button>
