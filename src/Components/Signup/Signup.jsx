@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import AuthContext from "../../Contexts/Auth/AuthContext";
 import { use } from "react";
@@ -6,8 +6,10 @@ import { useNavigate } from "react-router";
 import { useLocation } from "react-router";
 import { toast } from 'react-hot-toast';
 import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const userInfo = use(AuthContext);
   const createUser = userInfo.createUser;
   const loginUserWithGoogle = userInfo.loginUserWithGoogle;
@@ -48,6 +50,11 @@ const Signup = () => {
         navigate(locationLogin?.state || `/`);
       });
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
   return (
     <div className="mt-4 mb-6">
       <DynamicPageTitle title="Signup" />
@@ -72,12 +79,21 @@ const Signup = () => {
                   name="email"
                 />
                 <label className="label">Password</label>
-                <input
-                  type="password"
-                  className="input mb-3"
-                  placeholder="Password"
-                  name="password"
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    className="input mb-3 w-full pr-10"
+                    placeholder="Password"
+                    name="password"
+                  />
+                  <button
+                    type="button"
+                    onClick={togglePasswordVisibility}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
                 <div>
                   <Link to={`/login`} className="link link-hover font-extralight">
                     Already have an account?
