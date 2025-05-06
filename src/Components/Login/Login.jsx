@@ -83,10 +83,10 @@ const Login = () => {
                 />
                 <div>
                   <Link
-                    to={`/signup`}
+                    to={`/forgetpassword`}
                     className="link link-hover font-extralight"
                   >
-                    Don't have an account?
+                    Forgot Password?
                   </Link>
                 </div>
                 <button className="btn btn-neutral mt-4 w-full">Login</button>

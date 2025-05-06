@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute.jsx";
 import EventDetails from "../Components/EventDetails/EventDetails.jsx";
 import Profile from "../Pages/Profile/Profile.jsx";
 import Organize from "../Components/Organize/Organize.jsx";
+import ForgetPassword from "../Components/ForgetPassword/ForgetPassword.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
             <Organize></Organize>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/forgetpassword",
+        element: <ForgetPassword></ForgetPassword>,
       },
       {
         path: "*",

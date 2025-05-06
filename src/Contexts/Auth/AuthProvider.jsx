@@ -11,6 +11,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -19,6 +20,9 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  const sendPasswordResetLink = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
   const updateUserProfile = (name, photo) => {
     // setIsLoadingDone(false);
     return updateProfile(auth.currentUser, {
@@ -59,6 +63,7 @@ const AuthProvider = ({ children }) => {
     isLoadingDone,
     loginUserWithGoogle,
     updateUserProfile,
+    sendPasswordResetLink
   };
   return (
     <div>
