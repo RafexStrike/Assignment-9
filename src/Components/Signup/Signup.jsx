@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import { useContext } from "react";
 import AuthContext from "../../Contexts/Auth/AuthContext";
-import { use } from "react";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router";
 import { toast } from 'react-hot-toast';
@@ -10,9 +10,9 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const userInfo = use(AuthContext);
-  const createUser = userInfo.createUser;
-  const loginUserWithGoogle = userInfo.loginUserWithGoogle;
+  const userInfo = useContext(AuthContext);
+  const { createUser, updateUserProfile, loginUserWithGoogle } = userInfo;
+  
   const navigate = useNavigate();
   const locationLogin = useLocation();
 
@@ -20,6 +20,7 @@ const Signup = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+    const name = event.target.name.value;
   
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
   
@@ -30,9 +31,15 @@ const Signup = () => {
   
     createUser(email, password)
       .then((result) => {
-        // console.log(result.user);
-        toast.success("Signup successful!");
-        navigate(locationLogin?.state || `/`);
+        updateUserProfile(name, "")
+          .then(() => {
+            toast.success("Signup successful!");
+            navigate(locationLogin?.state || `/`);
+          })
+          .catch((error) => {
+            console.error("Profile update error:", error);
+            toast.error("Failed to update profile. Please try again.");
+          });
       })
       .catch((error) => {
         console.error("Signup error:", error);
@@ -43,11 +50,11 @@ const Signup = () => {
   const handleGoogleLogIn = () => {
     loginUserWithGoogle()
       .then((result) => {
-        // console.log(result);
+        navigate(locationLogin?.state || `/`);
       })
       .catch((error) => {
-        // console.log(error);
-        navigate(locationLogin?.state || `/`);
+        console.error("Google login error:", error);
+        toast.error("Google login failed. Please try again.");
       });
   };
 
@@ -70,13 +77,20 @@ const Signup = () => {
               </h1>
               <form onSubmit={handleRegister}>
                 <label className="label">Name</label>
-                <input type="text" className="input mb-3" placeholder="Name" />
+                <input 
+                  type="text" 
+                  className="input mb-3 w-full" 
+                  placeholder="Name" 
+                  name="name" 
+                  required 
+                />
                 <label className="label">Email</label>
                 <input
                   type="email"
-                  className="input mb-3"
+                  className="input mb-3 w-full"
                   placeholder="Email"
                   name="email"
+                  required
                 />
                 <label className="label">Password</label>
                 <div className="relative">
@@ -85,6 +99,7 @@ const Signup = () => {
                     className="input mb-3 w-full pr-10"
                     placeholder="Password"
                     name="password"
+                    required
                   />
                   <button
                     type="button"
