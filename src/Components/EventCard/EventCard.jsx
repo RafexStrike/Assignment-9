@@ -21,7 +21,7 @@ const EventCard = ({ event }) => {
       <figure className="h-56 overflow-hidden">
         <img src="https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=600" alt={name} className="w-full object-cover" />
       </figure>
-      <div className="card-body">
+      <div className="bg-[#F3EDDC] card-body">
         <h2 className="card-title text-primary">{name}</h2>
         <p className="text-sm text-gray-600 line-clamp-2">{description}</p>
 

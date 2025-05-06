@@ -5,7 +5,7 @@ import { use } from "react";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router";
 import { toast } from 'react-hot-toast';
-
+import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
 
 const Signup = () => {
   const userInfo = use(AuthContext);
@@ -50,6 +50,7 @@ const Signup = () => {
   };
   return (
     <div className="mt-4 mb-6">
+      <DynamicPageTitle title="Signup" />
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

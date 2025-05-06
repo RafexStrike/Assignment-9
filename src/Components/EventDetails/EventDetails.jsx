@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import ErrorPage from "../../Pages/ErrorPage";
 import { toast } from "react-hot-toast";
+import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center min-h-[60vh]">
@@ -59,6 +60,7 @@ const EventDetails = () => {
 
   return (
     <Suspense fallback={<LoadingSpinner />}>
+      <DynamicPageTitle title="Event Details" />
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Event Details Section */}

@@ -6,6 +6,8 @@ import Signup from "../Components/Signup/Signup.jsx";
 import ErrorPage from "../Pages/ErrorPage";
 import PrivateRoute from "./PrivateRoute.jsx";
 import EventDetails from "../Components/EventDetails/EventDetails.jsx";
+import Profile from "../Pages/Profile/Profile.jsx";
+import Organize from "../Components/Organize/Organize.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +31,22 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <EventDetails></EventDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/organize",
+        element: (
+          <PrivateRoute>
+            <Organize></Organize>
           </PrivateRoute>
         ),
       },

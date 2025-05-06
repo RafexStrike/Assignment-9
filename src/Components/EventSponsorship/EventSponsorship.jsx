@@ -18,7 +18,7 @@ const EventSponsorshipLayout = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Custom Event Format Section */}
-          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div className="bg-[#F3EDDC] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3"
@@ -59,7 +59,7 @@ const EventSponsorshipLayout = () => {
           </div>
 
           {/* Event Series Sponsorship Section */}
-          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div className="bg-[#F3EDDC] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3"

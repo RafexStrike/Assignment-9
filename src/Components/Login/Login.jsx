@@ -4,6 +4,7 @@ import AuthContext from "../../Contexts/Auth/AuthContext";
 import { use } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { toast, Toaster } from "react-hot-toast";
+import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
 
 const Login = () => {
   const userInfo = use(AuthContext);
@@ -13,6 +14,7 @@ const Login = () => {
   const locationLogin = useLocation();
 
   const handleGoogleLogIn = () => {
+
     loginUserWithGoogle()
       .then((result) => {
         // console.log(result);
@@ -26,6 +28,7 @@ const Login = () => {
   };
 
   const handleRegister = (event) => {
+    
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
@@ -50,6 +53,7 @@ const Login = () => {
 
   return (
     <div className="mt-4 mb-6">
+      <DynamicPageTitle title="Login" />
       <Toaster position="top-center" reverseOrder={false} />{" "}
       {/* Toaster added */}
       <div className="hero bg-base-200 min-h-screen">

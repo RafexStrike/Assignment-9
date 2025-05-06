@@ -63,7 +63,7 @@ const SuccessStories = () => {
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#F3EDDC] rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex justify-center mb-4">{metric.icon}</div>
               <h3 className="text-3xl font-bold text-gray-800 mb-2">
@@ -79,7 +79,7 @@ const SuccessStories = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className=" rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-[#F3EDDC] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex items-center mb-6">
                 <img

@@ -6,7 +6,20 @@ import { use } from "react";
 
 const Navbar = () => {
   const userInfo = use(AuthContext);
-  const { user, logOutUser } = userInfo;
+  const { user, logOutUser, isLoadingDone } = userInfo;
+  const defaultProfilePic = "https://i.ibb.co/1dSwFqY/default-avatar.png";
+
+  if (!isLoadingDone) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="loading loading-ball loading-xs"></span>
+        <span className="loading loading-ball loading-sm"></span>
+        <span className="loading loading-ball loading-md"></span>
+        <span className="loading loading-ball loading-lg"></span>
+        <span className="loading loading-ball loading-xl"></span>
+      </div>
+    );
+  }
 
   const handleLogOut = () => {
     logOutUser().then(() => "user has been logged out successfully");
@@ -22,14 +35,17 @@ const Navbar = () => {
         <NavLink className="mr-2 nav-link" to="/">
           Home
         </NavLink>
-        <NavLink className="mr-2 nav-link " to="/events">
-          Events
+        <NavLink className="mr-2 nav-link " to="/organize">
+          Organize
         </NavLink>
         <NavLink className="mr-2 nav-link " to="/login">
           Login
         </NavLink>
         <NavLink className="mr-2 nav-link " to="/signup">
           Register
+        </NavLink>
+        <NavLink className="mr-2 nav-link " to="/profile">
+          Profile
         </NavLink>
       </div>
     </>
@@ -63,7 +79,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Eventero</a>
+          <Link to="/" className="btn btn-ghost text-xl">Eventero</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -71,9 +87,14 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <div className="flex items-center gap-4">
-              <Suspense fallback={<p>User information is loading...</p>}>
-                <p>{userEmail}</p>
-              </Suspense>
+              <Link to="/profile" className="flex items-center gap-3">
+                <img
+                  src={user?.photoURL || defaultProfilePic}
+                  alt="Profile"
+                  className="w-8 h-8 rounded-full object-cover ring-2 ring-primary"
+                />
+                <span className="text-gray-700">{userEmail}</span>
+              </Link>
               <button
                 onClick={handleLogOut}
                 className="btn btn-success rounded-lg"

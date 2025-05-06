@@ -106,7 +106,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="mt-12 pt-8 border-t border-[#ECE3CA] text-center">
                     <p className="text-[#ECE3CA] flex items-center justify-center gap-2">
-                        © 2024 Eventora. Made with <FaHeart className="text-[#FF9FA0]" /> in Bangladesh
+                        © 2025 Eventora. Made with <FaHeart className="text-[#FF9FA0]" /> in Bangladesh
                     </p>
                 </div>
             </div>
