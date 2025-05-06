@@ -89,6 +89,7 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <Link to="/profile" className="flex items-center gap-3">
                 <img
+                title={user?.displayName || "User"}
                   src={user?.photoURL || defaultProfilePic}
                   alt="Profile"
                   className="w-8 h-8 rounded-full object-cover ring-2 ring-primary"

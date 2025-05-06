@@ -10,12 +10,21 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoadingDone, setIsLoadingDone] = useState(false);
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const updateUserProfile = (name, photo) => {
+    // setIsLoadingDone(false);
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
   };
 
   const loginUser = (email, password) => {
@@ -49,6 +58,7 @@ const AuthProvider = ({ children }) => {
     logOutUser,
     isLoadingDone,
     loginUserWithGoogle,
+    updateUserProfile,
   };
   return (
     <div>
