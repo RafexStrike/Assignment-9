@@ -21,7 +21,7 @@ const UpcomingEvents = () => {
   // console.log(eventsData);
   return (
     <div className="mt-36 mb-12">
-      <DynamicPageTitle title="Upcoming Events" />
+      {/* <DynamicPageTitle title="Upcoming Events" /> */}
       <div className="text-center mb-16">
         <h2 data-aos="fade-right" data-aos-delay="100" className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
           Upcoming Events

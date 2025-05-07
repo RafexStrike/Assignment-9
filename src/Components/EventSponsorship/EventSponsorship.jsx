@@ -12,7 +12,7 @@ const EventSponsorshipLayout = () => {
   }, []);
   return (
     <section className="mt-24 py-16">
-      <DynamicPageTitle title="Partner With Us" />
+      {/* <DynamicPageTitle title="Partner With Us" /> */}
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">

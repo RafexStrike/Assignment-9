@@ -24,22 +24,23 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOutUser().then(() => "user has been logged out successfully");
   };
-
+  // console.log("printing user from the navbar", user.email)
+  // console.log("Is user truthy?", !!user);
   const links = (
     <>
-      <NavLink className="nav-link block lg:inline-block" to="/">
+      <NavLink className="nav-link " to="/">
         Home
       </NavLink>
-      <NavLink className="nav-link block lg:inline-block" to="/profile">
+      <NavLink className="nav-link " to="/profile">
         Profile
       </NavLink>
-      <NavLink className="nav-link block lg:inline-block" to="/organize">
+      <NavLink className="nav-link " to="/organize">
         Organize
       </NavLink>
-      <NavLink className={`nav-link block lg:inline-block ${user ? 'hidden' : ''}`} to="/login">
+      <NavLink className={`nav-link  ${user ? "hidden" : ""}`} to="/login">
         Login
       </NavLink>
-      <NavLink className={`nav-link block lg:inline-block ${user ? 'hidden' : ''}`} to="/signup">
+      <NavLink className={`nav-link  ${user ? "hidden" : ""}`} to="/signup">
         Register
       </NavLink>
     </>
@@ -78,9 +79,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="navbar-center hidden lg:flex space-x-4">
-          {links}
-        </div>
+        <div className="navbar-center hidden lg:flex space-x-4">{links}</div>
 
         <div className="navbar-end">
           {user ? (
@@ -104,7 +103,10 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <Link to={`/login`} className="btn btn-success btn-sm md:btn-md rounded-lg">
+            <Link
+              to={`/login`}
+              className="btn btn-success btn-sm md:btn-md rounded-lg"
+            >
               Login
             </Link>
           )}
