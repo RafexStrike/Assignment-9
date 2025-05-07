@@ -129,14 +129,4 @@ Eventora is a modern event management platform designed to connect event organiz
 }
 ```
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](issues-link).
-
-## 📝 License
-
-This project is [MIT](LICENSE) licensed.
-
-## 👥 Contact
-
-For any queries or support, please contact [your-email@example.com]
+## 📝 Live URL
