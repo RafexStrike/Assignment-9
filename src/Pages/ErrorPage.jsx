@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { FaHome, FaExclamationTriangle } from 'react-icons/fa';
+import DynamicPageTitle from '../Components/DynamicPageTitle/DynamicPageTitle';
 
 const ErrorPage = () => {
     return (
         <div className="min-h-[80vh] flex items-center justify-center px-4">
+            <DynamicPageTitle title="404 - Page Not Found" />
             <div className="text-center">
                 <div className="flex justify-center mb-8">
                     <FaExclamationTriangle className="text-8xl text-primary animate-bounce" />

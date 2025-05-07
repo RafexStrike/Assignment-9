@@ -1,9 +1,11 @@
 import React from "react";
 import { FaHandshake, FaUsers, FaBullhorn, FaCalendarCheck } from "react-icons/fa";
+import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
 
 const EventSponsorshipLayout = () => {
   return (
     <section className="mt-24 py-16">
+      <DynamicPageTitle title="Partner With Us" />
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">

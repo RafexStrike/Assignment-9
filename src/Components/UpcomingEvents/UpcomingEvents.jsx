@@ -3,6 +3,7 @@ import EventContext from "../../Contexts/Events/EventContext";
 import EventCard from "../EventCard/EventCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -13,6 +14,7 @@ const UpcomingEvents = () => {
   // console.log(eventsData);
   return (
     <div className="mt-36 mb-12">
+      <DynamicPageTitle title="Upcoming Events" />
       <div className="text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
           Upcoming Events

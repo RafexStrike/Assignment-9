@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar, FaQuoteLeft, FaChartLine, FaUsers, FaGlobe } from "react-icons/fa";
+import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
 
 const SuccessStories = () => {
   const testimonials = [
@@ -7,7 +8,7 @@ const SuccessStories = () => {
       name: "Mahbububa Nasrin",
       role: "Student, Jagannath University",
       image: "https://i.postimg.cc/4dX0z11n/03004d03-2602-43ba-9c7b-742c1af5120e.png",
-      quote: "Eventora’s helped me join a tech workshop and host a poetry event easily!",
+      quote: "Eventora's helped me join a tech workshop and host a poetry event easily!",
       rating: 5,
     },
     {
@@ -21,7 +22,7 @@ const SuccessStories = () => {
       name: "Sohan Rahman",
       role: "Student, North South University",
       image: "https://i.postimg.cc/Zn9r6N7q/2d76a4ca-2339-4d25-a241-b9f64961fa8b.png",
-      quote: "Eventora’s let me and my batchmates join an art workshop and host a career talk from NSU!",
+      quote: "Eventora's let me and my batchmates join an art workshop and host a career talk from NSU!",
       rating: 5,
     },
   ];
@@ -45,7 +46,8 @@ const SuccessStories = () => {
   ];
 
   return (
-    <section className="mt-24 py-16 ">
+    <section className="mt-24 py-16">
+      <DynamicPageTitle title="Success Stories" />
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">

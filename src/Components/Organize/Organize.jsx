@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaCalendar, FaMapMarkerAlt, FaClock, FaUsers, FaImage, FaDollarSign, FaInfoCircle } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
+import DynamicPageTitle from '../DynamicPageTitle/DynamicPageTitle';
 
 const Organize = () => {
     const handleSubmit = (e) => {
@@ -11,7 +12,7 @@ const Organize = () => {
 
     return (
         <div className="py-8">
-        
+            <DynamicPageTitle title="Organize Event" />
             <div className="text-center mb-12">
                 <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
                     Organize Your Event
