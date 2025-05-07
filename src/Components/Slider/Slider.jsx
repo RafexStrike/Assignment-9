@@ -4,8 +4,8 @@ import SwiperTest from "../SwiperTest/SwiperTest";
 import { Link } from "react-router";
 const Slider = ({ onJoinNowClick }) => {
   return (
-    <div className="mt-24 mb-12 flex items-center justify-center">
-      <div className="w-1/2 mx-auto">
+    <div className="mt-20 mb-12 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-0">
+      <div className="w-full md:w-1/2 mx-auto">
       <h1 className="text-4xl font-bold">Your City, Your Events <br /> Explore Now</h1>
       <p className="text-gray-500 mt-4">Support local vibes! <br />Join or host events to bring your community together!</p>
       <button className="btn btn-primary mt-4 rounded-lg" onClick={onJoinNowClick}>Explore Events</button>
@@ -69,7 +69,7 @@ const Slider = ({ onJoinNowClick }) => {
           </div>
         </div>
       </div> */}
-      <div className="w-1/2 mx-auto">
+      <div className="w-full md:w-1/2 mx-auto">
       <SwiperTest />
       </div>
 

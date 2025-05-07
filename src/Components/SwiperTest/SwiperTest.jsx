@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // Import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,6 +11,11 @@ import "swiper/css/scrollbar";
 import "swiper/css/autoplay"; // Make sure to import autoplay CSS
 
 const SwiperTest = () => {
+  const images = [
+    "https://i.postimg.cc/c4ySYmjV/image-4.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Panam_City_04.jpg/1200px-Panam_City_04.jpg",
+    "https://i.postimg.cc/KY4VCkwP/image-6.jpg"
+  ]
   return (
     <div className="w-full max-w-5xl mx-auto">
       <Swiper
@@ -26,22 +31,17 @@ const SwiperTest = () => {
         }}
         className="mySwiper"
       >
-        {[1, 2, 3, 4, 5].map((i) => (
+        {images.map((image,i) => (
           <SwiperSlide key={i}>
             <div className="card bg-base-100 shadow-xl">
               <figure>
                 <img
-                  src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8="
+                  className="rounded-xl w-full h-full object-cover"
+                  src={image}
                   alt={`Slide ${i}`}
                 />
               </figure>
-              {/* <div className="card-body">
-                <h2 className="card-title">Slide {i}</h2>
-                <p>This is some text for slide {i}. Looks good, right?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Learn More</button>
-                </div>
-              </div> */}
+             
             </div>
           </SwiperSlide>
         ))}

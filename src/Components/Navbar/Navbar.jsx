@@ -35,18 +35,19 @@ const Navbar = () => {
         <NavLink className="mr-2 nav-link" to="/">
           Home
         </NavLink>
-        <NavLink className="mr-2 nav-link " to="/organize">
-          Organize
-        </NavLink>
-        <NavLink className="mr-2 nav-link " to="/login">
-          Login
-        </NavLink>
-        <NavLink className="mr-2 nav-link " to="/signup">
-          Register
-        </NavLink>
         <NavLink className="mr-2 nav-link " to="/profile">
           Profile
         </NavLink>
+        <NavLink className="mr-2 nav-link " to="/organize">
+          Organize
+        </NavLink>
+        <NavLink className={`mr-2 nav-link ${user ? 'hidden' : ''}`}  to="/login">
+          Login
+        </NavLink>
+        <NavLink className={`mr-2 nav-link ${user ? 'hidden' : ''}`} to="/signup">
+          Register
+        </NavLink>
+       
       </div>
     </>
   );
@@ -79,7 +80,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">Eventero</Link>
+          <Link to="/" className="btn btn-ghost text-xl font-semibold">Eventero</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
