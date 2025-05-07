@@ -80,33 +80,45 @@ const Profile = () => {
                 </div>
                 {/* update profile */}
 
-                <div className="w-full max-w-md">
-                  <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <GrUpdate className="text-primary" />
-                    Update Your Profile
-                  </h2>
-                  <form onSubmit={handleUpdateProfile}>
-                    <label htmlFor="name">Name</label> <br />
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Enter your name"
-                    />
-                    <br />
-                    <label htmlFor="photo">Photo</label> <br />
-                    <input
-                      type="text"
-                      name="photo"
-                      id="photo"
-                      placeholder="Enter your photo url"
-                    />
-                    <br />
-                    <button  className="btn btn-primary" type="submit">
-                      Update
-                    </button>
-                  </form>
-                </div>
+                <div className="w-full max-w-md mt-6  rounded-lg ">
+  <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+    <GrUpdate className="text-primary" />
+    Update Your Profile
+  </h2>
+  <form onSubmit={handleUpdateProfile} className="space-y-4">
+    <div>
+      <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+        Name
+      </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter your name"
+        className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+      />
+    </div>
+    <div>
+      <label htmlFor="photo" className="block text-sm font-medium text-gray-700">
+        Photo URL
+      </label>
+      <input
+        type="text"
+        name="photo"
+        id="photo"
+        placeholder="Enter your photo URL"
+        className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+      />
+    </div>
+    <button
+      className="btn btn-primary w-full hover:brightness-110 transition duration-150"
+      type="submit"
+    >
+      Update
+    </button>
+  </form>
+</div>
+
               </div>
             </div>
           </div>

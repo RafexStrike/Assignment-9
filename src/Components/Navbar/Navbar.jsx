@@ -23,37 +23,31 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOutUser().then(() => "user has been logged out successfully");
-    // .catch((error) => console.log(error));
   };
-  const userEmail = user?.email;
-  console.log(user);
-  console.log(userEmail);
 
   const links = (
     <>
-      <div>
-        <NavLink className="mr-2 nav-link" to="/">
-          Home
-        </NavLink>
-        <NavLink className="mr-2 nav-link " to="/profile">
-          Profile
-        </NavLink>
-        <NavLink className="mr-2 nav-link " to="/organize">
-          Organize
-        </NavLink>
-        <NavLink className={`mr-2 nav-link ${user ? 'hidden' : ''}`}  to="/login">
-          Login
-        </NavLink>
-        <NavLink className={`mr-2 nav-link ${user ? 'hidden' : ''}`} to="/signup">
-          Register
-        </NavLink>
-       
-      </div>
+      <NavLink className="nav-link block lg:inline-block" to="/">
+        Home
+      </NavLink>
+      <NavLink className="nav-link block lg:inline-block" to="/profile">
+        Profile
+      </NavLink>
+      <NavLink className="nav-link block lg:inline-block" to="/organize">
+        Organize
+      </NavLink>
+      <NavLink className={`nav-link block lg:inline-block ${user ? 'hidden' : ''}`} to="/login">
+        Login
+      </NavLink>
+      <NavLink className={`nav-link block lg:inline-block ${user ? 'hidden' : ''}`} to="/signup">
+        Register
+      </NavLink>
     </>
   );
+
   return (
-    <div>
-      <div className="navbar bg-[#F3EDDC] shadow-sm rounded-xl">
+    <div className="sticky top-0 z-50 bg-[#F3EDDC] shadow-sm rounded-xl">
+      <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -64,48 +58,53 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                {" "}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
+                />
               </svg>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#F3EDDC] rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#F3EDDC] rounded-box w-52 space-y-2"
             >
               {links}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl font-semibold">Eventero</Link>
+          <Link to="/" className="btn btn-ghost text-xl font-semibold">
+            Eventero
+          </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+
+        <div className="navbar-center hidden lg:flex space-x-4">
+          {links}
         </div>
+
         <div className="navbar-end">
           {user ? (
-            <div className="flex items-center gap-4">
-              <Link to="/profile" className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-4">
+              <Link to="/profile" className="flex items-center gap-2">
                 <img
-                title={user?.displayName || "User"}
+                  title={user?.displayName || "User"}
                   src={user?.photoURL || defaultProfilePic}
                   alt="Profile"
                   className="w-8 h-8 rounded-full object-cover ring-2 ring-primary"
                 />
-                <span className="text-gray-700">{userEmail}</span>
+                <span className="hidden md:inline text-gray-700 truncate max-w-[120px]">
+                  {user.email}
+                </span>
               </Link>
               <button
                 onClick={handleLogOut}
-                className="btn btn-success rounded-lg"
+                className="btn btn-success btn-sm md:btn-md rounded-lg"
               >
                 Logout
               </button>
             </div>
           ) : (
-            <Link to={`/login`} className="btn btn-success rounded-lg">
+            <Link to={`/login`} className="btn btn-success btn-sm md:btn-md rounded-lg">
               Login
             </Link>
           )}
