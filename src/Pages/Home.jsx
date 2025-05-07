@@ -18,7 +18,7 @@ const Home = () => {
     AOS.init({ once: false, duration: 800 });
 
     const timeout = setTimeout(() => {
-      AOS.refresh();
+      AOS.refreshHard();
     }, 500);
 
     return () => clearTimeout(timeout);
