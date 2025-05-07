@@ -15,17 +15,32 @@ const Slider = ({ onJoinNowClick }) => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1 
-              className="text-4xl  font-bold leading-tight"
+              className="text-4xl font-bold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Your City, Your Events{" "}
-              <span className="text-primary">Explore Now</span>
+              {/* <span className="text-primary">Explore Now</span> */}
+              <motion.span
+  className="text-primary inline-block"
+  animate={{
+    y: [0, -6, 0],  // move up 8px and back to original
+  }}
+  transition={{
+    duration: 1.2,
+    repeat: Infinity,
+    repeatType: "loop",
+    ease: "easeInOut"
+  }}
+>
+  Explore Now!
+</motion.span>
+
             </motion.h1>
             
             <motion.p 
-              className="text-gray-600 mt-6 "
+              className="text-gray-600 mt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -38,12 +53,22 @@ const Slider = ({ onJoinNowClick }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <button 
+              <motion.button 
                 onClick={onJoinNowClick}
-                className="btn btn-primary mt-8  text-white  rounded-lg  font-semibold hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="btn btn-primary mt-8 text-white rounded-lg font-semibold hover:bg-primary/90 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  y: {
+                    duration: 1.2,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    ease: "easeInOut"
+                  }
+                }}
               >
                 Explore Events
-              </button>
+              </motion.button>
             </motion.div>
 
             {/* Stats Section */}
@@ -53,7 +78,6 @@ const Slider = ({ onJoinNowClick }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-     
             </motion.div>
           </motion.div>
 

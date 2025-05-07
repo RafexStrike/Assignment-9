@@ -1,0 +1,29 @@
+import React from "react";
+
+const Logo = () => {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Main circle representing gathering/community */}
+      <circle cx="20" cy="20" r="18" fill="#00736B" />
+      
+      {/* Abstract people/gathering symbols */}
+      <path
+        d="M12 22C14.5 16 25.5 16 28 22"
+        stroke="#F3EDDC"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      
+      {/* Decorative accent elements */}
+      <circle cx="20" cy="14" r="4" fill="#FF9FA0" />
+    </svg>
+  );
+};
+
+export default Logo;

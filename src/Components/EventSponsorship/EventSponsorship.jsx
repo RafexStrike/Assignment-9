@@ -11,7 +11,7 @@ const EventSponsorshipLayout = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="mt-24 py-16">
+    <section className="mt-20 py-16">
       {/* <DynamicPageTitle title="Partner With Us" /> */}
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}

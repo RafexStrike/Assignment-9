@@ -53,10 +53,10 @@ const SwiperTest = () => {
                 src={slide.image}
                 alt={`Slide ${i}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 transition-opacity duration-500">
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="text-3xl font-bold text-white mb-2">{slide.title}</h3>
-                  <p className="text-white/90">{slide.description}</p>
+                  <p className="text-white/90 mb-4">{slide.description}</p>
                 </div>
               </div>
             </div>

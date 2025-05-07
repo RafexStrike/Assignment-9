@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import AuthContext from "../../Contexts/Auth/AuthContext";
 import { use } from "react";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const userInfo = use(AuthContext);
@@ -74,9 +75,14 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl font-semibold">
-            Eventero
-          </Link>
+          {/* starts */}
+          <div className="z-10 flex items-center gap-2">
+            <Logo></Logo>
+            <Link to="/" className=" text-xl font-bold">
+              Eventero
+            </Link>
+          </div>
+          {/* ends */}
         </div>
 
         <div className="navbar-center hidden lg:flex space-x-4">{links}</div>
