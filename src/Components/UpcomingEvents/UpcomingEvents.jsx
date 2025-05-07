@@ -7,7 +7,7 @@ const UpcomingEvents = () => {
   const eventsData = eventContextValue.eventsData;
   // console.log(eventsData);
   return (
-    <div>
+    <div className="mt-36 mb-12">
       <div className="text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
           Upcoming Events

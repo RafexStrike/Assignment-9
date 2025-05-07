@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "thumbnail": "https://example.com/images/techfest.jpg",
+      "thumbnail": "https://i.postimg.cc/c4ySYmjV/image-4.jpg",
       "name": "Dhaka Tech Fest 2025",
       "category": "Tech",
       "date": "2025-06-10",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "thumbnail": "https://example.com/images/streetfood.jpg",
+      "thumbnail": "https://i.postimg.cc/j5GKT6jd/image-5.jpg",
       "name": "Old Dhaka Street Food Carnival",
       "category": "Food",
       "date": "2025-06-15",
@@ -21,7 +21,7 @@
     },
     {
       "id": 3,
-      "thumbnail": "https://example.com/images/artworkshop.jpg",
+      "thumbnail": "https://i.postimg.cc/KY4VCkwP/image-6.jpg",
       "name": "Watercolor Art Workshop",
       "category": "Art",
       "date": "2025-06-20",
@@ -31,7 +31,7 @@
     },
     {
       "id": 4,
-      "thumbnail": "https://example.com/images/eco-fair.jpg",
+      "thumbnail": "https://i.postimg.cc/GtQMKr6w/image-7.jpg",
       "name": "Green Living Eco Fair",
       "category": "Environment",
       "date": "2025-06-25",
@@ -41,7 +41,7 @@
     },
     {
       "id": 5,
-      "thumbnail": "https://example.com/images/photowalk.jpg",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Panam_City_04.jpg/1200px-Panam_City_04.jpg",
       "name": "Heritage Site Photo Walk",
       "category": "Photography",
       "date": "2025-07-05",
@@ -51,13 +51,13 @@
     },
     {
       "id": 6,
-      "thumbnail": "https://example.com/images/streetfood-night.jpg",
+      "thumbnail": "https://i.postimg.cc/05ZYKWbN/image-8.jpg",
       "name": "Night Street Food Fiesta",
       "category": "Food",
       "date": "2025-07-10",
       "location": "Hatirjheel Lakeside",
       "entryFee": "৳120",
-      "description": "Enjoy late-night street snacks from across Bangladesh with live DJs and a lakeside vibe."
+      "description": "Enjoy late-night street snacks from across Bangladesh with a lakeside vibe."
     }
   ]
   

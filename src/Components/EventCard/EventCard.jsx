@@ -19,7 +19,7 @@ const EventCard = ({ event }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
       <figure className="h-56 overflow-hidden">
-        <img src="https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=600" alt={name} className="w-full object-cover" />
+        <img src={thumbnail} alt={name} className="w-full object-cover" />
       </figure>
       <div className="bg-[#F3EDDC] card-body">
         <h2 className="card-title text-primary">{name}</h2>

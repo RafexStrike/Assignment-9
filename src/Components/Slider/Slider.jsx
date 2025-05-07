@@ -1,9 +1,16 @@
 import React from "react";
 import StreetFood from '../../assets/carousel/enjoying-street-food-fest.jpg'
-const Slider = () => {
+import SwiperTest from "../SwiperTest/SwiperTest";
+import { Link } from "react-router";
+const Slider = ({ onJoinNowClick }) => {
   return (
-    <div className="mt-4">
-      <div className="carousel w-full">
+    <div className="mt-24 mb-12 flex items-center justify-center">
+      <div className="w-1/2 mx-auto">
+      <h1 className="text-4xl font-bold">Your City, Your Events <br /> Explore Now</h1>
+      <p className="text-gray-500 mt-4">Support local vibes! <br />Join or host events to bring your community together!</p>
+      <button className="btn btn-primary mt-4 rounded-lg" onClick={onJoinNowClick}>Explore Events</button>
+      </div>
+      {/* <div className="carousel w-1/2 mx-auto">
         <div id="slide1" className="carousel-item relative w-full">
           <img
           
@@ -61,7 +68,11 @@ const Slider = () => {
             </a>
           </div>
         </div>
+      </div> */}
+      <div className="w-1/2 mx-auto">
+      <SwiperTest />
       </div>
+
     </div>
   );
 };

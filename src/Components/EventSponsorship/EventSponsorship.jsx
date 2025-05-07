@@ -3,7 +3,7 @@ import { FaHandshake, FaUsers, FaBullhorn, FaCalendarCheck } from "react-icons/f
 
 const EventSponsorshipLayout = () => {
   return (
-    <section className=" py-16">
+    <section className="mt-24 py-16">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -21,13 +21,13 @@ const EventSponsorshipLayout = () => {
           <div className="bg-[#F3EDDC] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3"
+                src="https://i.postimg.cc/0NN3r6Mg/image-3.jpg"
                 alt="Custom Event"
                 className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
+              {/* <div className="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
                 Premium Package
-              </div>
+              </div> */}
             </div>
             <div className="p-8">
               <h2 className="text-2xl lg:text-3xl font-bold mb-4 flex items-center gap-3">
@@ -62,13 +62,13 @@ const EventSponsorshipLayout = () => {
           <div className="bg-[#F3EDDC] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3"
+                src="https://i.postimg.cc/X7MTx7hF/image-2.jpg"
                 alt="Event Series"
                 className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute top-4 left-4 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
+              {/* <div className="absolute top-4 left-4 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
                 Most Popular
-              </div>
+              </div> */}
             </div>
             <div className="p-8">
               <h2 className="text-2xl lg:text-3xl font-bold mb-4 flex items-center gap-3">

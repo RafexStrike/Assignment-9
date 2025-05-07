@@ -4,24 +4,24 @@ import { FaStar, FaQuoteLeft, FaChartLine, FaUsers, FaGlobe } from "react-icons/
 const SuccessStories = () => {
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "Marketing Director, TechCorp",
+      name: "Mahbububa Nasrin",
+      role: "Student, Jagannath University",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3",
-      quote: "Eventora helped us reach the perfect audience for our tech summit. The engagement levels exceeded our expectations!",
+      quote: "Eventora’s helped me join a tech workshop and host a poetry event easily!",
       rating: 5,
     },
     {
-      name: "Michael Rodriguez",
-      role: "Event Manager, Creative Studios",
+      name: "Md. Rashedul Islam",
+      role: "Student, BRAC University",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3",
-      quote: "The team's attention to detail and professional execution made our design workshop series a huge success.",
+      quote: "Found a photography exhibition on Eventora, reserved a spot, and man I loved the local Bangaldeshi vibes it gave!",
       rating: 5,
     },
     {
-      name: "Emily Watson",
-      role: "CEO, Startup Hub",
+      name: "Md. Rashedul Islam",
+      role: "Student, North South University",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3",
-      quote: "Our networking events with Eventora consistently deliver high-quality connections and meaningful partnerships.",
+      quote: "Eventora’s let me and my batchmates join an art workshop and host a career talk from NSU!",
       rating: 5,
     },
   ];
@@ -45,7 +45,7 @@ const SuccessStories = () => {
   ];
 
   return (
-    <section className="py-16 ">
+    <section className="mt-24 py-16 ">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -53,7 +53,7 @@ const SuccessStories = () => {
             Success Stories
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. See what our partners have to say about
+            Don't just take our word for it. See what our users have to say about
             their experience with Eventora.
           </p>
         </div>

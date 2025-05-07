@@ -38,7 +38,7 @@ const EventDetails = () => {
     return <ErrorPage />;
   }
 
-  const { name, category, date, location, entryFee, description } = event;
+  const { thumbnail, name, category, date, location, entryFee, description } = event;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -64,10 +64,10 @@ const EventDetails = () => {
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Event Details Section */}
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-[#F3EDDC] rounded-xl shadow-lg p-6">
             <div className="mb-6">
               <img
-                src="https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src={thumbnail}
                 alt={name}
                 className="w-full h-64 object-cover rounded-lg"
               />
@@ -97,7 +97,7 @@ const EventDetails = () => {
           </div>
 
           {/* Reservation Form Section */}
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-[#F3EDDC]  rounded-xl shadow-lg p-6">
             <h2 className="text-2xl font-bold text-primary mb-6">Reserve Your Seat</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>

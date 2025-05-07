@@ -6,6 +6,7 @@ packages used:
 5. firebase
 6. react-icons
 7.react-hot-toast
+8. swipeer js
 
 
 
