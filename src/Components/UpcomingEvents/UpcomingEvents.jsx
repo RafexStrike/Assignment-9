@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import EventContext from "../../Contexts/Events/EventContext";
 import EventCard from "../EventCard/EventCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,25 +12,84 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const UpcomingEvents = () => {
-  useEffect(() => {
-    AOS.init({ once: false, duration: 800 });
-    AOS.refresh();
-  }, []);
   const eventContextValue = use(EventContext);
   const eventsData = eventContextValue.eventsData;
-  // console.log(eventsData);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    
+    if (typeof window !== 'undefined') {
+      const elements = document.querySelectorAll('[data-aos]');
+      elements.forEach(element => {
+        element.removeAttribute('data-aos-delay');
+        element.removeAttribute('data-aos-duration');
+        element.setAttribute('data-aos-once', 'false');
+      });
+    }
+
+    AOS.init({
+      startEvent: 'load',
+      once: false,
+      duration: 1000,
+      offset: 50,
+      delay: 0,
+      mirror: true,
+      anchorPlacement: 'top-bottom',
+      disable: false,
+      useClassNames: true,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99
+    });
+
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+      AOS.refresh();
+    }, 100);
+
+    const handleScroll = () => {
+      if (isLoaded) {
+        AOS.refresh();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded && eventsData.length > 0) {
+      AOS.refresh();
+    }
+  }, [eventsData, isLoaded]);
+
   return (
     <div className="mt-36 mb-12">
       {/* <DynamicPageTitle title="Upcoming Events" /> */}
       <div className="text-center mb-16">
-        <h2 data-aos="fade-right" data-aos-delay="100" className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
-          Upcoming Events
-        </h2>
-        <p data-aos="fade-left" data-aos-delay="200" className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Discover what's happening next! Join us at inspiring, high-energy
-          gatherings designed to connect, educate, and empower our vibrant
-          community.
-        </p>
+        <div 
+          className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <h2 
+            data-aos="fade-right"
+            className="text-4xl lg:text-5xl font-bold mb-4 text-primary"
+          >
+            Upcoming Events
+          </h2>
+          <p 
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            Discover what's happening next! Join us at inspiring, high-energy
+            gatherings designed to connect, educate, and empower our vibrant
+            community.
+          </p>
+        </div>
       </div>
 
       {/* Desktop View */}

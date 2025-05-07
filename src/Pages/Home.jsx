@@ -14,15 +14,15 @@ const Home = () => {
     eventsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    AOS.init({ once: false, duration: 800 });
+  // useEffect(() => {
+  //   AOS.init({ once: false, duration: 800 });
 
-    const timeout = setTimeout(() => {
-      AOS.refreshHard();
-    }, 500);
+  //   const timeout = setTimeout(() => {
+  //     AOS.refreshHard();
+  //   }, 500);
 
-    return () => clearTimeout(timeout);
-  }, []);
+  //   return () => clearTimeout(timeout);
+  // }, []);
 
   return (
     <div>
