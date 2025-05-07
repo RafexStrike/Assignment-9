@@ -1,6 +1,11 @@
 import React, { use } from "react";
 import EventContext from "../../Contexts/Events/EventContext";
 import EventCard from "../EventCard/EventCard";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const UpcomingEvents = () => {
   const eventContextValue = use(EventContext);
@@ -13,16 +18,72 @@ const UpcomingEvents = () => {
           Upcoming Events
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Discover what’s happening next! Join us at inspiring, high-energy
+          Discover what's happening next! Join us at inspiring, high-energy
           gatherings designed to connect, educate, and empower our vibrant
           community.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center">
-        {eventsData.map((event) => (
-          <EventCard key={event.id} event={event}></EventCard>
-        ))}
+      {/* Desktop View */}
+      <div className="hidden lg:block">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={3}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="pb-12"
+        >
+          {eventsData.map((event) => (
+            <SwiperSlide key={event.id}>
+              <div className="flex justify-center">
+                <EventCard event={event} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Tablet View */}
+      <div className="hidden md:block lg:hidden">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={2}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="pb-12"
+        >
+          {eventsData.map((event) => (
+            <SwiperSlide key={event.id}>
+              <div className="flex justify-center">
+                <EventCard event={event} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Mobile View */}
+      <div className="md:hidden">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="pb-12"
+        >
+          {eventsData.map((event) => (
+            <SwiperSlide key={event.id}>
+              <div className="flex justify-center">
+                <EventCard event={event} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
