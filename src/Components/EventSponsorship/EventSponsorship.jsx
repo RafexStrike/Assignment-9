@@ -1,18 +1,25 @@
 import React from "react";
 import { FaHandshake, FaUsers, FaBullhorn, FaCalendarCheck } from "react-icons/fa";
 import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const EventSponsorshipLayout = () => {
+  useEffect(() => {
+    AOS.init({ once: false, duration: 800 });
+    AOS.refresh();
+  }, []);
   return (
     <section className="mt-24 py-16">
       <DynamicPageTitle title="Partner With Us" />
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
+            <h1 data-aos="fade-right" data-aos-delay="100" className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
             Partner With Us
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p data-aos="fade-left" data-aos-delay="200" className="text-lg text-gray-600 max-w-2xl mx-auto">
             Join forces with Eventora to create unforgettable experiences and reach
             our vibrant community of event enthusiasts.
           </p>

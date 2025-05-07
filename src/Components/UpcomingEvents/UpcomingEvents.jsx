@@ -7,8 +7,15 @@ import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const UpcomingEvents = () => {
+  useEffect(() => {
+    AOS.init({ once: false, duration: 800 });
+    AOS.refresh();
+  }, []);
   const eventContextValue = use(EventContext);
   const eventsData = eventContextValue.eventsData;
   // console.log(eventsData);
@@ -16,10 +23,10 @@ const UpcomingEvents = () => {
     <div className="mt-36 mb-12">
       <DynamicPageTitle title="Upcoming Events" />
       <div className="text-center mb-16">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
+        <h2 data-aos="fade-right" data-aos-delay="100" className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
           Upcoming Events
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p data-aos="fade-left" data-aos-delay="200" className="text-lg text-gray-600 max-w-2xl mx-auto">
           Discover what's happening next! Join us at inspiring, high-energy
           gatherings designed to connect, educate, and empower our vibrant
           community.

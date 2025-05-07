@@ -1,28 +1,46 @@
 import React from "react";
-import { FaStar, FaQuoteLeft, FaChartLine, FaUsers, FaGlobe } from "react-icons/fa";
+import {
+  FaStar,
+  FaQuoteLeft,
+  FaChartLine,
+  FaUsers,
+  FaGlobe,
+} from "react-icons/fa";
 import DynamicPageTitle from "../DynamicPageTitle/DynamicPageTitle";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const SuccessStories = () => {
+  useEffect(() => {
+    AOS.init({ once: false, duration: 800 });
+    AOS.refresh();
+  }, []);
   const testimonials = [
     {
       name: "Mahbububa Nasrin",
       role: "Student, Jagannath University",
-      image: "https://i.postimg.cc/4dX0z11n/03004d03-2602-43ba-9c7b-742c1af5120e.png",
-      quote: "Eventora's helped me join a tech workshop and host a poetry event easily!",
+      image:
+        "https://i.postimg.cc/4dX0z11n/03004d03-2602-43ba-9c7b-742c1af5120e.png",
+      quote:
+        "Eventora's helped me join a tech workshop and host a poetry event easily!",
       rating: 5,
     },
     {
       name: "Md. Rashedul Islam",
       role: "Student, BRAC University",
       image: "https://i.postimg.cc/K8tD9nZk/image-9.jpg",
-      quote: "Found a photography exhibition on Eventora, reserved a spot, and man I loved the local Bangaldeshi vibes it gave!",
+      quote:
+        "Found a photography exhibition on Eventora, reserved a spot, and man I loved the local Bangaldeshi vibes it gave!",
       rating: 5,
     },
     {
       name: "Sohan Rahman",
       role: "Student, North South University",
-      image: "https://i.postimg.cc/Zn9r6N7q/2d76a4ca-2339-4d25-a241-b9f64961fa8b.png",
-      quote: "Eventora's let me and my batchmates join an art workshop and host a career talk from NSU!",
+      image:
+        "https://i.postimg.cc/Zn9r6N7q/2d76a4ca-2339-4d25-a241-b9f64961fa8b.png",
+      quote:
+        "Eventora's let me and my batchmates join an art workshop and host a career talk from NSU!",
       rating: 5,
     },
   ];
@@ -51,12 +69,16 @@ const SuccessStories = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-primary">
+          <h2
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="text-4xl lg:text-5xl font-bold mb-4 text-primary"
+          >
             Success Stories
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. See what our users have to say about
-            their experience with Eventora.
+          <p  data-aos="fade-left" data-aos-delay="100" className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it. See what our users have to say
+            about their experience with Eventora.
           </p>
         </div>
 
@@ -111,4 +133,4 @@ const SuccessStories = () => {
   );
 };
 
-export default SuccessStories; 
+export default SuccessStories;
